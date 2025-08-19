@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Prisma Client 생성 설정을 정의하는 부분입니다.
+// 1. provider = "prisma-client-js"
+// 어떤 종류의 클라이언트를 생성할지 지정합니다.
+// "prisma-client-js"는 JavaScript/TypeScript용 Prisma Client를 생성합니다.
+// 즉, import { PrismaClient } from '...'로 사용할 수 있는 코드가 만들어집니다.
+
+// 2. output = "../src/generated/prisma"
+// Prisma Client 생성 파일을 저장할 경로를 지정합니다.
+// 기본값: node_modules/@prisma/client
+// 여기서는 ch10/prisma/schema.prisma 기준으로 ../src/generated/prisma 폴더에 생성하도록 설정했습니다.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement()) // 기본키 + 자동 증가
+  email     String   @unique                      // 고유 제약조건
+  name      String
+  createdAt DateTime @default(now())               // 기본값 현재 시간
+}
