@@ -169,7 +169,7 @@ npm start       # 빌드 결과 실행
 
 ## 7. Prisma 명령어
 
-### 7.1 프로젝트 초기화
+### 7.1 프로젝트 초기화(ch13)
 
 ```bash
 npx prisma init
