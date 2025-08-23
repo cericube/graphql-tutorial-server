@@ -242,6 +242,14 @@ const prisma = new PrismaClient()
 
 ---
 
+### 7.4 Prisma Studio 실행
+
+```bash
+npx prisma studio
+```
+
+---
+
 ## ✅ 정리
 
 - `tsconfig.base.json`으로 공통 설정 유지

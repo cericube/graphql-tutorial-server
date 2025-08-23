@@ -1,0 +1,10 @@
+//rootDir, outDir, include, exclude 모두 tsconfig.json 파일이 있는 위치를 기준으로 해석
+{
+  "extends": "../tsconfig.base.json", // 루트에 base 설정이 있다면
+  "compilerOptions": {
+    "rootDir": "src",      // 소스 코드 폴더
+    "outDir": "dist"       // 컴파일 결과물 폴더
+  },
+  "include": ["src"],       // 컴파일 대상
+  "exclude": [".env"]       // 제외할 폴더
+}

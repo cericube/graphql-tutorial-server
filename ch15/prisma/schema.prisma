@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  name  String   
+  posts Post[]  // 1:N 관계
+}
+
+model Post {
+  id         Int        @id @default(autoincrement())
+  title      String
+  userId     Int
+  user       User       @relation(fields: [userId], references: [id])
+  categories Category[] @relation(name: "PostCategories")  // N:M 관계
+}
+
+model Category {
+  id    Int     @id   @default(autoincrement())
+  name  String  @unique
+  posts Post[]  @relation(name: "PostCategories")
+}
+
+
+/////////////////////////////////////////////////////////////
+// 명시적(Named) 중간 테이블을 직접 만들기
+/////////////////////////////////////////////////////////////
+// model Post {
+//   id          Int                @id @default(autoincrement())
+//   title       String
+//   userId     Int
+//   user       User                @relation(fields: [userId], references: [id])
+//   categories  PostCategory[]
+// }
+
+// model Category {
+//   id          Int                @id @default(autoincrement())
+//   name        String             @unique
+//   posts       PostCategory[]
+// }
+
+// model PostCategory {
+//   postId      Int
+//   categoryId  Int
+//   post        Post     @relation(fields: [postId], references: [id])
+//   category    Category @relation(fields: [categoryId], references: [id])
+
+//   @@id([postId, categoryId]) // 복합 기본 키
+// }
