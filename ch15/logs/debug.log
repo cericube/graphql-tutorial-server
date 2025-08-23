@@ -26,3 +26,6 @@
 {"level":"debug","message":"Parsing request to extract GraphQL parameters","timestamp":"2025-08-23T09:31:22.128Z"}
 {"level":"debug","message":"Processing GraphQL Parameters","timestamp":"2025-08-23T09:31:22.134Z"}
 {"level":"debug","message":"Processing GraphQL Parameters done.","timestamp":"2025-08-23T09:31:22.155Z"}
+{"level":"debug","message":"Parsing request to extract GraphQL parameters","timestamp":"2025-08-23T09:35:35.696Z"}
+{"level":"debug","message":"Processing GraphQL Parameters","timestamp":"2025-08-23T09:35:35.703Z"}
+{"level":"debug","message":"Processing GraphQL Parameters done.","timestamp":"2025-08-23T09:35:35.731Z"}
