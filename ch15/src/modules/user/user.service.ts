@@ -15,9 +15,7 @@ export class UserService {
   async createUser(input: CreateUserInput) {
     try {
       const user = this.prisma.user.create({
-        data: {
-          name: input.name,
-        },
+        data: input,
       });
       return user;
     } catch (err) {
