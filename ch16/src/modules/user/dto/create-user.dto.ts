@@ -18,7 +18,7 @@ export const CreateUserSchema = z.object({
    * - 예) "abc@naver" → ❌ "이메일 형식이 올바르지 않습니다."
    */
   email: z.email({
-    message: '이메일 형식이 올바르지 않습니다.',
+    error: '이메일 형식이 올바르지 않습니다.',
   }),
 
   /**
@@ -29,7 +29,7 @@ export const CreateUserSchema = z.object({
    * - 예) "" 또는 "김" → ❌ "이름은 최소 2자 이상이어야 합니다."
    */
   name: z.string().min(2, {
-    message: '이름은 최소 2자 이상이어야 합니다.',
+    error: '이름은 최소 2자 이상이어야 합니다.',
   }),
 
   /**
@@ -44,7 +44,7 @@ export const CreateUserSchema = z.object({
   age: z
     .number()
     .min(18, {
-      message: '나이는 18세 이상이어야 합니다.',
+      error: '나이는 18세 이상이어야 합니다.',
     })
     .optional(),
 });
