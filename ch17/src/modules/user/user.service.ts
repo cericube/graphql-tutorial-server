@@ -46,7 +46,6 @@ export class UserService {
   async getUserById(id: number) {
     // Zod를 사용해 입력값 검증 수행
     const result = userIdSchema.safeParse({ id });
-    console.log(result); // 디버깅 로그 (실제 서비스에서는 제거 권장)
 
     if (!result.success) {
       // 유효성 검증 실패 시 GraphQL 표준 예외 반환
