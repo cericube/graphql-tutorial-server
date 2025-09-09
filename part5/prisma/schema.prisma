@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Prisma 자체는 현재까지도 스키마 파일(schema.prisma)을 단일 파일만 허용
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())  // 사용자 ID (Primary Key)
+  nickname String                                  // 사용자 닉네임
+  email    String    @unique                       // 사용자 이메일 (Unique)
+  posts    Post[]                                  // 작성한 게시글 목록 (1:N)
+  comments Comment[]                               // 작성한 댓글 목록 (1:N)
+}
+
+model Post {
+  id        Int       @id @default(autoincrement()) // 게시글 ID (Primary Key)
+  title     String                                  // 게시글 제목
+  content   String                                  // 게시글 내용
+  createdAt DateTime  @default(now())               // 게시글 생성일
+  likeCount Int       @default(0)                   // 좋아요 수
+  author    User      @relation(fields: [authorId], references: [id]) // 작성자(User) 참조
+  authorId  Int                                      // 작성자 ID (FK)
+  comments  Comment[]                               // 댓글 목록 (1:N)
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())  // 댓글 ID (Primary Key)
+  content   String                                  // 댓글 내용
+  createdAt DateTime @default(now())                // 댓글 작성일
+  post      Post     @relation(fields: [postId], references: [id]) // 게시글(Post) 참조
+  postId    Int                                     // 게시글 ID (FK)
+  author    User     @relation(fields: [authorId], references: [id]) // 작성자(User) 참조
+  authorId  Int                                     // 작성자 ID (FK)
+}
+

@@ -1,0 +1,8 @@
+{
+  "name": "part5",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
+  }
+}

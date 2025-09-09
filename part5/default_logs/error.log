@@ -1,0 +1,1 @@
+{"level":"error","message":"{\n  \"code\": \"P2025\",\n  \"meta\": {\n    \"modelName\": \"User\",\n    \"cause\": \"No record was found for an update.\"\n  },\n  \"clientVersion\": \"6.14.0\",\n  \"name\": \"PrismaClientKnownRequestError\"\n}","timestamp":"2025-09-09T02:21:14.587Z"}
