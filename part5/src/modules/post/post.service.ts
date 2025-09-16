@@ -19,8 +19,9 @@ export class PostService {
     return post;
   }
 
-  async getPosts() {
+  async getPosts(authorId?: number) {
     return this.prisma.post.findMany({
+      where: authorId ? { authorId } : undefined,
       include: { author: true, comments: true },
       orderBy: { createdAt: 'desc' },
     });

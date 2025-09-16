@@ -8,8 +8,8 @@ export const postResolvers = {
       return context.services.postService.getPostById(args.id);
     },
 
-    posts: async (_parent: unknown, args: unknown, context: GraphQLContext) => {
-      return context.services.postService.getPosts();
+    posts: async (_parent: unknown, args: { authorId?: number }, context: GraphQLContext) => {
+      return context.services.postService.getPosts(args.authorId);
     },
   },
 

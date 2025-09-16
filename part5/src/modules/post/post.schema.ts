@@ -24,7 +24,7 @@ export const postTypeDefs = /* GraphQL */ `
   }
 
   type Query {
-    posts: [Post!]!
+    posts(authorId: Int): [Post!]!
     post(id: Int!): Post
   }
 

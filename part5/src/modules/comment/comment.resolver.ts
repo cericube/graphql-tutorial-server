@@ -13,12 +13,12 @@ export const commentResolvers = {
       return context.services.commentService.getCommentById(args.id);
     },
 
-    commentsByPost: async (_parent: unknown, args: { id: number }, context: GraphQLContext) => {
-      return context.services.commentService.getCommentsByPost(args.id);
+    commentsByPost: async (_parent: unknown, args: { postId: number }, context: GraphQLContext) => {
+      return context.services.commentService.getCommentsByPost(args.postId);
     },
 
-    commentsByUser: async (_parent: unknown, args: { id: number }, context: GraphQLContext) => {
-      return context.services.commentService.getCommentsByUser(args.id);
+    commentsByUser: async (_parent: unknown, args: { userId: number }, context: GraphQLContext) => {
+      return context.services.commentService.getCommentsByUser(args.userId);
     },
 
     comments: async (_parent: unknown, args: unknown, context: GraphQLContext) => {
