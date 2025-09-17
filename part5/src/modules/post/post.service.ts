@@ -53,10 +53,17 @@ export class PostService {
 
   async deletePost(id: number) {
     try {
-      await this.prisma.post.delete({
+      // deleted 변수에는 해당 Post 모델의 전체 필드 값이 들어 있습니다.
+      const deleted = await this.prisma.post.delete({
         where: { id },
+        //일부 필드만 포함된 객체 반환
+        // 개인정보 보호가 필요한 경우 필수
+        select: {
+          id: true,
+          title: true,
+        },
       });
-      return true;
+      return deleted;
     } catch (error) {
       handlePrismaError(error);
     }

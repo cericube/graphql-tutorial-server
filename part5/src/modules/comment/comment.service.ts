@@ -18,8 +18,6 @@ export class CommentService {
   }
 
   async getCommentsByPost(postId: number) {
-    console.log('>>>>>>>> : ' + postId);
-
     return this.prisma.comment.findMany({
       where: { postId },
       orderBy: { createdAt: 'desc' },
