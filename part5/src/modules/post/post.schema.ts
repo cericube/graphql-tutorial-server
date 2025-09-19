@@ -31,6 +31,7 @@ export const postTypeDefs = /* GraphQL */ `
   type Mutation {
     createPost(input: CreatePostInput!): Post!
     updatePost(id: Int!, input: UpdatePostInput!): Post!
+    increasePostLike(id: Int!): Post!
     deletePost(id: Int!): Post!
   }
 `;

@@ -40,6 +40,10 @@ export const postResolvers = {
       return context.services.postService.updatePost(args.id, args.input);
     },
 
+    increasePostLike: async (_parent: unknown, args: { id: number }, context: GraphQLContext) => {
+      return context.services.postService.increasePostLike(args.id);
+    },
+
     deletePost: async (_parent: unknown, args: { id: number }, context: GraphQLContext) => {
       return context.services.postService.deletePost(args.id);
     },

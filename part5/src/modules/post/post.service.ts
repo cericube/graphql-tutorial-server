@@ -51,6 +51,23 @@ export class PostService {
     }
   }
 
+  async increasePostLike(id: number) {
+    try {
+      const post = await this.prisma.post.update({
+        where: { id },
+        data: {
+          likeCount: {
+            increment: 1,
+          },
+        },
+        // include: { author: true, comments: true },
+      });
+      return post;
+    } catch (error) {
+      handlePrismaError(error);
+    }
+  }
+
   async deletePost(id: number) {
     try {
       // deleted 변수에는 해당 Post 모델의 전체 필드 값이 들어 있습니다.
