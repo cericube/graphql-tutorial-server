@@ -60,7 +60,7 @@ export class PostService {
             increment: 1,
           },
         },
-        // include: { author: true, comments: true },
+        include: { author: true },
       });
       return post;
     } catch (error) {
