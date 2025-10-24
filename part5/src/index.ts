@@ -6,6 +6,8 @@ import { resolvers } from './resolvers';
 
 import { createContext } from './context';
 
+console.log('debug');
+
 const yoga = createYoga({
   //  이 구문은 GraphQL 서버가 처음 시작될 때 단 한 번 실행되어,
   // GraphQLSchema 인스턴스를 생성합니다.
