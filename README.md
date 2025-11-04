@@ -177,6 +177,7 @@ npx prisma init
 
 - `prisma/schema.prisma` 파일 생성
 - `.env` 환경 변수 파일 생성
+- `prisma.config.ts` 파일 삭제
 
 ```
 📁 prisma/

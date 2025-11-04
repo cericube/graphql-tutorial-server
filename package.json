@@ -1,39 +1,39 @@
 {
   "name": "graphql-tutorial-server",
   "version": "1.0.0",
+  "description": "TypeScript 프로젝트를 모듈 단위(chapter 구조)로 관리하고, 빌드, 실행, Prisma ORM까지 다루는 실전 구성 가이드입니다.",
   "main": "index.js",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.9.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "prisma": "^6.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  },
   "scripts": {
-    "dev": "ts-node ./index.ts",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@types/node": "^24.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "eslint": "^9.32.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.3",
-    "globals": "^16.3.0",
-    "prettier": "^3.6.2",
-    "prisma": "^6.14.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.38.0"
-  },
   "dependencies": {
     "@prisma/client": "^6.14.0",
+    "bcryptjs": "^3.0.2",
     "dataloader": "^2.2.3",
     "date-fns": "^4.1.0",
-    "dotenv": "^17.2.1",
+    "dotenv": "^17.2.3",
     "graphql": "^16.11.0",
-    "graphql-scalars": "^1.24.2",
-    "graphql-yoga": "^5.15.1",
-    "winston": "^3.17.0",
-    "zod": "^4.1.4"
+    "graphql-yoga": "^5.16.0",
+    "jsonwebtoken": "^9.0.2",
+    "winston": "^3.18.3",
+    "zod": "^4.1.12"
   }
 }
